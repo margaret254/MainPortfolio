@@ -3,7 +3,6 @@ from django.db import models
 # About Model
 
 class About(models.Model):
-    short_description = models.TextField()
     description = models.TextField()
     image = models.ImageField(upload_to="about")
 
@@ -30,6 +29,7 @@ class RecentWork(models.Model):
     title = models.CharField(max_length=100, verbose_name="Work title")
     short_description = models.TextField()
     image = models.ImageField(upload_to="works")
+    image_url = models.URLField()
 
     def __str__(self):
         return self.title
